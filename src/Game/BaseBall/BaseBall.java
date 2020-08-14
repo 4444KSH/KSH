@@ -1,0 +1,31 @@
+package Game.BaseBall;
+/*
+ * for문 안에서 break문을 만나면 for문을 빠져 나가는 것이고
+ * if문 안에서 return을 만나면 메소드를 빠져나감.
+ */
+public class BaseBall {
+	public String account(String user) {
+		//문자열의 길이를 체크하고 싶을 때
+		if(user.length()!=3) {
+			return " 세 자리 숫자를 입력하세요.";
+		}
+		int temp=Integer.parseInt(user);
+		int my[]=new int[3];
+		my[0]=temp/100;
+		my[1]=temp%100/10;
+		my[2]=temp%10;
+		for(int x=0;x<3;x++) {
+			System.out.println(my[x]+"");
+		}
+		System.out.println();
+		return "0스트라이크 2볼";
+	}
+	
+	public static void main(String[] args) {
+		BaseBall bb = new BaseBall();
+		String result = bb.account("2568"+""+"");
+		System.out.println("1.256:"+result);
+		
+	}
+
+}
